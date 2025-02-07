@@ -9,7 +9,7 @@ export interface Repository {
   name: string;
   owner: string;
   stars: number;
-  createdAt: Date;
+  createdAt: string;
   description?: string;
   url?: string;
   issues?: RepositoryIssue[];

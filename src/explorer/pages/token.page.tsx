@@ -55,7 +55,7 @@ function TokenPage() {
       if (explorerEvent.type === ExplorerEventType.Success) {
         setInvalidToken(false);
         navigateTo('/repositories');
-      } else {
+      } else if (explorerEvent.type === ExplorerEventType.Error) {
         setInvalidToken(true);
       }
     }
