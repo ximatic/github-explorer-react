@@ -77,6 +77,32 @@ export const explorerSlice = createSlice({
         type: ExplorerEventType.Error,
       };
     }),
+    // load repository
+    loadRepository: create.reducer(
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      (state: ExplorerState, action: PayloadAction<{ owner: string; name: string; pagination: ExplorerPagination }>) => {
+        state.pageInfo = initialState.pageInfo;
+        state.event = {
+          name: ExplorerEventName.LoadRepository,
+          type: ExplorerEventType.Processing,
+        };
+      },
+    ),
+    loadRepositorySuccess: create.reducer((state: ExplorerState, action: PayloadAction<{ repository: Repository }>) => {
+      state.repository = action.payload.repository;
+      state.event = {
+        name: ExplorerEventName.LoadRepository,
+        type: ExplorerEventType.Success,
+      };
+    }),
+    loadRepositoryError: create.reducer((state: ExplorerState) => {
+      state.repository = initialState.repository;
+      state.pageInfo = initialState.pageInfo;
+      state.event = {
+        name: ExplorerEventName.LoadRepository,
+        type: ExplorerEventType.Error,
+      };
+    }),
     // pagination
     pageInfo: create.reducer((state: ExplorerState, action: PayloadAction<{ pageInfo: ExplorerPageInfo }>) => {
       state.pageInfo = action.payload.pageInfo;
@@ -99,6 +125,9 @@ export const {
   loadRepositories,
   loadRepositoriesSuccess,
   loadRepositoriesError,
+  loadRepository,
+  loadRepositorySuccess,
+  loadRepositoryError,
   pageInfo,
 } = explorerSlice.actions;
 

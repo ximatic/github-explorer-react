@@ -1,7 +1,7 @@
 export interface RepositoryIssue {
   title: string;
   author: string;
-  createdAt: Date;
+  createdAt: string;
   url: string;
 }
 

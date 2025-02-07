@@ -65,7 +65,7 @@ function App() {
               <Routes>
                 <Route path='/' element={<TokenPage />} />
                 <Route path='/repositories' element={<RepositoriesPage />} />
-                <Route path='/repository' element={<RepositoryPage />} />
+                <Route path='/:owner/:name' element={<RepositoryPage />} />
               </Routes>
             </div>
           </React.Fragment>
