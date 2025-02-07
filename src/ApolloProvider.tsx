@@ -1,11 +1,13 @@
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client';
+
+import fetch from 'cross-fetch';
 
 interface ApolloGraphqlProviderProps {
   readonly children: React.ReactNode;
 }
 
 export const apolloClient = new ApolloClient({
-  uri: 'https://api.github.com/graphql',
+  link: new HttpLink({ uri: 'https://api.github.com/graphql', fetch }),
   cache: new InMemoryCache(),
 });
 

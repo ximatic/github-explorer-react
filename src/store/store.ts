@@ -3,19 +3,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import { explorerSlice } from '../explorer/store/explorer.slice';
 import { explorerMiddleware } from '../explorer/store/explorer.middleware';
 
-// export const store = configureStore({
-//   reducer: {
-//     explorer: explorerSlice.reducer,
-//   },
-//   middleware: (getDefaultMiddleware) => {
-//     return getDefaultMiddleware().concat(explorerMiddleware);
-//   },
-// });
-
-// export type AppStore = typeof store;
-// export type AppDispatch = typeof store.dispatch;
-// export type RootState = ReturnType<typeof store.getState>;
-
 export const makeStore = () => {
   return configureStore({
     reducer: {

@@ -20,7 +20,7 @@ export const explorerSlice = createSlice({
     reset: create.reducer(() => initialState),
     // verify token
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    verifyToken: create.reducer((state: ExplorerState, action: PayloadAction<{ token: string; storeToken: boolean }>) => {
+    verifyToken: create.reducer((state: ExplorerState, _action: PayloadAction<{ token: string; storeToken: boolean }>) => {
       state.token = initialState.token;
       state.repositories = initialState.repositories;
       state.repository = initialState.repository;
@@ -52,7 +52,7 @@ export const explorerSlice = createSlice({
     }),
     // load repositories
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    loadRepositories: create.reducer((state: ExplorerState, action: PayloadAction<{ pagination: ExplorerPagination }>) => {
+    loadRepositories: create.reducer((state: ExplorerState, _action: PayloadAction<{ pagination: ExplorerPagination }>) => {
       state.repository = initialState.repository;
       state.pageInfo = initialState.pageInfo;
       state.event = {
@@ -80,7 +80,7 @@ export const explorerSlice = createSlice({
     // load repository
     loadRepository: create.reducer(
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      (state: ExplorerState, action: PayloadAction<{ owner: string; name: string; pagination: ExplorerPagination }>) => {
+      (state: ExplorerState, _action: PayloadAction<{ owner: string; name: string; pagination: ExplorerPagination }>) => {
         state.pageInfo = initialState.pageInfo;
         state.event = {
           name: ExplorerEventName.LoadRepository,
