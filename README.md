@@ -1,3 +1,56 @@
+# GitHub Explorer
+
+# Solution
+
+## Start && access application
+
+- To start application execute following commands in project's directory
+  - `npm install`
+  - `npm run dev`
+- Application, by default, should be accessible via **http://localhost:5173**
+
+## Design
+
+- Application is divided into 2 main sections:
+  - Header with "logo", title and "logout" button to reset Token (only visible on Repositories and Repository routes)
+  - Main content according to current route
+- There are 3 routes available
+  - `/` - is used to provide GitHub API Token (default route)
+  - `/repositories` - list of public repositories
+  - `/:owner/:name` - list issues of selected repository with basic information
+  - using any other route causes redirection to default `/` one
+
+## Features
+
+- Verify validity of GitHub API Token
+- List of public GitHub repositories sorted by start count
+- Repository information with list of its issues sorted by date
+
+## Libraries
+
+Solution is using following 3rd party libraries (on top of the latest Reac 19):
+
+- PrimeNG - to create unified design for UI components
+- Tailwind CSS - to simplify usage of basic CSS classes
+- Redux - for state management
+- Apollo - for GraphQL requests
+
+## Alternatives
+
+Same application, but written in Angular, is available at [GitHub](https://github.com/ximatic/github-explorer)
+
+## TODO
+
+TODOs:
+
+- Add error handling (e.g. for GraphQL resuests)
+- Improve unit tests
+- Add E2E tests
+- Implement more advanced RWD
+- Add application configuration for better handling multiple environments (staging/integration/production/etc.)
+
+## Default documentation
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -22,7 +75,7 @@ export default tseslint.config({
       tsconfigRootDir: import.meta.dirname,
     },
   },
-})
+});
 ```
 
 - Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
@@ -31,7 +84,7 @@ export default tseslint.config({
 
 ```js
 // eslint.config.js
-import react from 'eslint-plugin-react'
+import react from 'eslint-plugin-react';
 
 export default tseslint.config({
   // Set the react version
@@ -46,5 +99,5 @@ export default tseslint.config({
     ...react.configs.recommended.rules,
     ...react.configs['jsx-runtime'].rules,
   },
-})
+});
 ```
