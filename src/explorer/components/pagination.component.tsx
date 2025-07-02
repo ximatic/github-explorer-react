@@ -106,6 +106,7 @@ export default function Pagination({ onPaginationChange }: PaginationProps) {
             severity='secondary'
             disabled={!pageInfo.hasPreviousPage || changeInProgress}
             onClick={previousPage}
+            data-testid='pagination-prev-btn'
           />
 
           <Dropdown
@@ -115,6 +116,7 @@ export default function Pagination({ onPaginationChange }: PaginationProps) {
             optionLabel='name'
             optionValue='code'
             disabled={changeInProgress}
+            data-testid='pagination-dropdown'
           />
 
           <Button
@@ -123,6 +125,7 @@ export default function Pagination({ onPaginationChange }: PaginationProps) {
             severity='secondary'
             disabled={!pageInfo.hasNextPage || changeInProgress}
             onClick={nextPage}
+            data-testid='pagination-next-btn'
           />
         </div>
       ) : (
