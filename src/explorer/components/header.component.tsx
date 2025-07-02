@@ -30,7 +30,11 @@ export default function Header() {
 
   const headerEndContent = (
     <React.Fragment>
-      {logoutVisible ? <Button icon='pi pi-power-off' text severity='secondary' onClick={resetToken}></Button> : ''}
+      {logoutVisible ? (
+        <Button icon='pi pi-power-off' text severity='secondary' onClick={resetToken} data-testid='button-logout'></Button>
+      ) : (
+        ''
+      )}
     </React.Fragment>
   );
 

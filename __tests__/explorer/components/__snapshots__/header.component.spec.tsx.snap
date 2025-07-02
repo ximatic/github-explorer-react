@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="p-toolbar p-component"
+    data-pc-name="toolbar"
+    data-pc-section="root"
+    role="toolbar"
+  >
+    <div
+      class="p-toolbar-group-start p-toolbar-group-left"
+      data-pc-section="start"
+    />
+    <div
+      class="p-toolbar-group-center"
+      data-pc-section="center"
+    >
+      <div
+        class="flex w-full"
+      >
+        <div
+          class="grow text-center"
+        >
+          <span
+            class="pi pi-github mr-2"
+          />
+          GitHub Explorer
+        </div>
+      </div>
+    </div>
+    <div
+      class="p-toolbar-group-end p-toolbar-group-right"
+      data-pc-section="end"
+    />
+  </div>
+</DocumentFragment>
+`;

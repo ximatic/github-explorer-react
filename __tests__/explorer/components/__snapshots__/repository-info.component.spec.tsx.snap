@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="repository-info"
+  >
+    <div
+      class="p-panel p-component"
+      data-pc-name="panel"
+      data-pc-section="root"
+      id="pr_id_1"
+    >
+      <div
+        class="p-panel-header"
+        data-pc-section="header"
+      >
+        <span
+          class="p-panel-title"
+          data-pc-section="title"
+          id="pr_id_1_header"
+        >
+          test-owner-1/test-name-1
+        </span>
+        <div
+          class="p-panel-icons"
+          data-pc-section="icons"
+        />
+      </div>
+      <div
+        aria-hidden="false"
+        aria-labelledby="pr_id_1_header"
+        class="p-toggleable-content"
+        data-pc-section="toggleablecontent"
+        id="pr_id_1_content"
+        role="region"
+      >
+        <div
+          class="p-panel-content"
+          data-pc-section="content"
+        >
+          <div>
+            <span
+              class="pi pi-star-fill mr-2"
+            />
+            0 | 02-07-2025
+          </div>
+          <div
+            class="mt-1"
+          >
+            test-description-1
+          </div>
+          <div
+            class="mt-2"
+          >
+            <a
+              class="underline"
+              href="test-url-1"
+              target="_blank"
+            >
+              <span
+                class="pi pi-link mr-2"
+              />
+              Repository URL
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
