@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TokenPage matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="dashboard"
+  >
+    <div
+      class="p-panel--border mb-4 block p-panel p-component"
+      data-pc-name="panel"
+      data-pc-section="root"
+      id="pr_id_1"
+    >
+      <div
+        aria-hidden="false"
+        aria-labelledby="pr_id_1_header"
+        class="p-toggleable-content"
+        data-pc-section="toggleablecontent"
+        id="pr_id_1_content"
+        role="region"
+      >
+        <div
+          class="p-panel-content"
+          data-pc-section="content"
+        >
+          <div
+            class="grid place-items-center"
+          >
+            <p>
+              <span
+                class="pi pi-github !text-5xl"
+              />
+            </p>
+            <p
+              class="pt-2"
+            >
+              Welcome to 
+              <strong>
+                GitHub Explorer
+              </strong>
+            </p>
+            <p
+              class="pt-2 text-center"
+            >
+              Please follow the intructions from panel below to start browsing GitHub public repositories.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mb-4 block p-panel p-component"
+      data-pc-name="panel"
+      data-pc-section="root"
+      id="pr_id_2"
+    >
+      <div
+        class="p-panel-header"
+        data-pc-section="header"
+      >
+        <span
+          class="p-panel-title"
+          data-pc-section="title"
+          id="pr_id_2_header"
+        >
+          GitHub Authentication
+        </span>
+        <div
+          class="p-panel-icons"
+          data-pc-section="icons"
+        />
+      </div>
+      <div
+        aria-hidden="false"
+        aria-labelledby="pr_id_2_header"
+        class="p-toggleable-content"
+        data-pc-section="toggleablecontent"
+        id="pr_id_2_content"
+        role="region"
+      >
+        <div
+          class="p-panel-content"
+          data-pc-section="content"
+        >
+          <form>
+            <div
+              class="mb-3"
+            >
+              Your API Token*
+            </div>
+            <div>
+              <span
+                class="p-float-label"
+                data-pc-name="floatlabel"
+                data-pc-section="root"
+              >
+                <input
+                  class="w-full p-inputtext p-component"
+                  data-pc-name="inputtext"
+                  data-pc-section="root"
+                  id="token"
+                  value=""
+                />
+                <label
+                  for="token"
+                >
+                  Token
+                </label>
+              </span>
+            </div>
+            <div
+              class="mb-3 mt-3 flex items-center"
+            >
+              <div
+                class="p-checkbox p-component"
+                data-p-disabled="false"
+                data-p-highlight="false"
+                data-pc-name="checkbox"
+                data-pc-section="root"
+              >
+                <input
+                  aria-invalid="false"
+                  class="p-checkbox-input"
+                  data-pc-section="input"
+                  type="checkbox"
+                />
+                <div
+                  class="p-checkbox-box"
+                  data-p-disabled="false"
+                  data-p-highlight="false"
+                  data-pc-section="box"
+                />
+              </div>
+              <div
+                class="ml-2"
+              >
+                Store token locally**
+              </div>
+            </div>
+          </form>
+          <div
+            class="mt-4"
+          >
+            <button
+              class="block w-full p-button p-component p-disabled"
+              data-pc-name="button"
+              data-pc-section="root"
+              disabled=""
+            >
+              <span>
+                Start browsing
+              </span>
+            </button>
+          </div>
+          <div
+            class="mt-4"
+          >
+            <small
+              class="block"
+            >
+              * By default, API Token is stored only temporarly on your machine as long as you are on this page.
+            </small>
+            <small
+              class="block"
+            >
+              ** API Token can be stored locally in the browser (using 
+              <code>
+                localStorage
+              </code>
+              ) to simplify usage.
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

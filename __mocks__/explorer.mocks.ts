@@ -1,9 +1,17 @@
-import { ExplorerPaginationItemsKey, ExplorerPaginationCursorKey, RepositoryIssue } from '../src/explorer/models/explorer.model';
-import { ExplorerEvent, ExplorerEventName, ExplorerEventType } from '../src/explorer/store/explorer.state';
+import {
+  ExplorerPaginationItemsKey,
+  ExplorerPaginationCursorKey,
+  RepositoryIssue,
+  Repository,
+  ExplorerPagination,
+  ExplorerPageInfo,
+} from '../src/explorer/models/explorer.model';
+import { ExplorerEvent, ExplorerEventName, ExplorerEventType, ExplorerState } from '../src/explorer/store/explorer.state';
 
 // common mocks
 
 export const MOCK_TOKEN_1 = 'test-token-1';
+export const MOCK_TOKEN_2 = 'test-token-2';
 
 export const MOCK_REPOSITORY_OWNER_1 = 'test-owner-1';
 export const MOCK_REPOSITORY_OWNER_2 = 'test-owner-2';
@@ -13,7 +21,7 @@ export const MOCK_REPOSITORY_NAME_2 = 'test-name-2';
 
 // repository mocks
 
-export const MOCK_REPOSITORY_1 = {
+export const MOCK_REPOSITORY_1: Repository = {
   owner: MOCK_REPOSITORY_OWNER_1,
   name: MOCK_REPOSITORY_NAME_1,
   stars: 0,
@@ -23,7 +31,7 @@ export const MOCK_REPOSITORY_1 = {
   issues: [],
 };
 
-export const MOCK_REPOSITORY_2 = {
+export const MOCK_REPOSITORY_2: Repository = {
   owner: MOCK_REPOSITORY_OWNER_2,
   name: MOCK_REPOSITORY_NAME_2,
   stars: 0,
@@ -50,14 +58,14 @@ export const MOCK_REPOSITORY_ISSUE_2: RepositoryIssue = {
 
 // pagination mocks
 
-export const MOCK_EXPLORER_PAGINATION_1 = {
+export const MOCK_EXPLORER_PAGINATION_1: ExplorerPagination = {
   itemsKey: ExplorerPaginationItemsKey.First,
   itemsValue: 5,
   cursorKey: ExplorerPaginationCursorKey.After,
   cursorValue: null,
 };
 
-export const MOCK_EXPLORER_PAGE_INFO_1 = {
+export const MOCK_EXPLORER_PAGE_INFO_1: ExplorerPageInfo = {
   itemsPerPage: 5,
   hasNextPage: true,
   hasPreviousPage: true,
@@ -65,7 +73,7 @@ export const MOCK_EXPLORER_PAGE_INFO_1 = {
   cursorEnd: 'end-cursor',
 };
 
-export const MOCK_EXPLORER_PAGE_INFO_2 = {
+export const MOCK_EXPLORER_PAGE_INFO_2: ExplorerPageInfo = {
   itemsPerPage: 5,
   hasNextPage: false,
   hasPreviousPage: false,
@@ -75,12 +83,13 @@ export const MOCK_EXPLORER_PAGE_INFO_2 = {
 
 // store mocks
 
-export const MOCK_INITIAL_EXPLORER_STATE = {
+export const MOCK_INITIAL_EXPLORER_STATE: ExplorerState = {
   token: null,
   repositories: null,
   repository: null,
   pageInfo: null,
   error: null,
+  event: null,
 };
 
 // explorer events
