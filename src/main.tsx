@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { PrimeReactProvider } from 'primereact/api';
 
 import StoreProvider from './store/StoreProvider.tsx';
-import ApolloGraphqlProvider from './ApolloProvider.tsx';
+import { ApolloGraphqlProvider } from './ApolloProvider.tsx';
 
 import App from './App.tsx';
 

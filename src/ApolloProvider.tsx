@@ -11,6 +11,6 @@ export const apolloClient = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export default function ApolloGraphqlProvider({ children }: ApolloGraphqlProviderProps) {
+export function ApolloGraphqlProvider({ children }: ApolloGraphqlProviderProps) {
   return <ApolloProvider client={apolloClient}>{children}</ApolloProvider>;
 }
