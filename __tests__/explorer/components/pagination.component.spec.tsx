@@ -1,6 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
+import { MOCK_EXPLORER_PAGE_INFO_1 } from '../../../__mocks__/explorer.mocks';
+
 import { useAppSelector } from '../../../src/store/hooks';
 
 import Pagination from '../../../src/explorer/components/pagination.component';
@@ -15,13 +17,6 @@ describe('Pagination', () => {
     return render(<Pagination onPaginationChange={onPaginationChange} />);
   };
 
-  const defaultPageInfo = {
-    hasPreviousPage: true,
-    hasNextPage: true,
-    cursorStart: 'start-cursor',
-    cursorEnd: 'end-cursor',
-  };
-
   afterEach(() => {
     jest.clearAllMocks();
   });
@@ -29,7 +24,7 @@ describe('Pagination', () => {
   // snapshot tests
 
   test('matches snapshot', () => {
-    const { asFragment } = renderComponent(defaultPageInfo);
+    const { asFragment } = renderComponent(MOCK_EXPLORER_PAGE_INFO_1);
 
     expect(asFragment()).toMatchSnapshot();
   });
@@ -44,7 +39,7 @@ describe('Pagination', () => {
   });
 
   it('renders pagination controls when pageInfo is present', () => {
-    renderComponent(defaultPageInfo);
+    renderComponent(MOCK_EXPLORER_PAGE_INFO_1);
 
     expect(screen.getByTestId('pagination-prev-btn')).toBeInTheDocument();
     expect(screen.getByTestId('pagination-next-btn')).toBeInTheDocument();
@@ -52,7 +47,7 @@ describe('Pagination', () => {
   });
 
   it('disables previous button if hasPreviousPage is false', () => {
-    renderComponent({ ...defaultPageInfo, hasPreviousPage: false });
+    renderComponent({ ...MOCK_EXPLORER_PAGE_INFO_1, hasPreviousPage: false });
 
     const prevBtn = screen.getByTestId('pagination-prev-btn');
 
@@ -60,7 +55,7 @@ describe('Pagination', () => {
   });
 
   it('disables next button if hasNextPage is false', () => {
-    renderComponent({ ...defaultPageInfo, hasNextPage: false });
+    renderComponent({ ...MOCK_EXPLORER_PAGE_INFO_1, hasNextPage: false });
 
     const nextBtn = screen.getByTestId('pagination-next-btn');
 
@@ -69,7 +64,7 @@ describe('Pagination', () => {
 
   it('calls onPaginationChange when previous button is clicked', () => {
     const onPaginationChange = jest.fn();
-    renderComponent(defaultPageInfo, onPaginationChange);
+    renderComponent(MOCK_EXPLORER_PAGE_INFO_1, onPaginationChange);
 
     const prevBtn = screen.getByTestId('pagination-prev-btn');
     fireEvent.click(prevBtn);
@@ -79,7 +74,7 @@ describe('Pagination', () => {
 
   it('calls onPaginationChange when next button is clicked', () => {
     const onPaginationChange = jest.fn();
-    renderComponent(defaultPageInfo, onPaginationChange);
+    renderComponent(MOCK_EXPLORER_PAGE_INFO_1, onPaginationChange);
 
     const nextBtn = screen.getByTestId('pagination-next-btn');
     fireEvent.click(nextBtn);
@@ -89,7 +84,7 @@ describe('Pagination', () => {
 
   it('calls onPaginationChange when items per page is changed', () => {
     const onPaginationChange = jest.fn();
-    renderComponent(defaultPageInfo, onPaginationChange);
+    renderComponent(MOCK_EXPLORER_PAGE_INFO_1, onPaginationChange);
 
     const dropdown = screen.getByTestId('pagination-dropdown');
     fireEvent.click(dropdown);
